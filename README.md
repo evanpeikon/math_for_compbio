@@ -66,4 +66,11 @@ This repository contains a series of math tutorials for computational biology an
   - Evaluate $\int^{2}_{1} xdx$
     - $\int^{2}_{1}xdx = \frac{x^2}{2}]_1^2 = \frac{2^2}{2} - \frac{1^2}{2} = \frac{4}{2} - \frac{1}{2} = \frac{3}{2}$
 - Properies of the definite integral...
-  - If $a$ is in the domain of $f$, then $\int^{a}_{a} f(x)dx = 0$ because there is no area under th e curve $y=f(x)$ above the x-axis. 
+  - If $a$ is in the domain of $f$, then $\int^{a}_{a} f(x)dx = 0$ because there is no area under th e curve $y=f(x)$ above the x-axis.
+    - For example, $\int^{5}_{5} x^4dx = 0$
+
+If $b<a$ and $f$ is integrable on $[a,b]$, then ...
+$\int^{b}_{a} f(x)dx = - \int^{a}_{b} f(x)dx$
+
+ex)
+$\int^{0}_{4} xdx = - \int^{4}_{0} xdx = - \frac{x^2}{2}}_{0}_{4} = -8$
