@@ -100,3 +100,5 @@ This repository contains a series of math tutorials for computational biology an
 
 ## Natural Logarithms
 - The integral $\int^{x}_1 \frac{1}{t} dt$ is called the natural logarithm of $x$ and is denoted by the symbol $ln$. Thus, $ln(x) = \int^{x}_1 \frac{1}{t}dt$
+- Since $ln(x) = \int^{x}_1 \frac{1}{t}dt$, we can say that $lnx$ is the antiderivative of $\frac{1}{x}$ and $lnx$ equals 0 when $x=1$. Thus, $\frac{d}{dx}[lnx] = \frac{1}{x}$.
+  - For example, $\frac{d}{dx}[ln2] = \frac{1}{2}$
