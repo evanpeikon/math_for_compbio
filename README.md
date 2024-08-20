@@ -65,7 +65,32 @@ This repository contains a series of math tutorials for computational biology an
 - If $f$ is continous on [a,b] and if $F$ is the anti-derivative of $f$ on [a,b], then $\int^{b}_{a} f(x)dx = F(x)]_a^b = F(b)-F(a)$
   - Evaluate $\int^{2}_{1} xdx$
     - $\int^{2}_{1}xdx = \frac{x^2}{2}]_1^2 = \frac{2^2}{2} - \frac{1^2}{2} = \frac{4}{2} - \frac{1}{2} = \frac{3}{2}$
-- Properies of the definite integral...
-  - If $a$ is in the domain of $f$, then $\int^{a}_{a} f(x)dx = 0$ because there is no area under th e curve $y=f(x)$ above the x-axis.
-    - For example, $\int^{5}_{5} x^4dx = 0$
-  - More properties on notebook pg. 110
+
+### Properies of The Definite Integral...
+- If $a$ is in the domain of $f$, then $\int^{a}_{a} f(x)dx = 0$ because there is no area under th e curve $y=f(x)$ above the x-axis.
+  - For example, $\int^{5}_{5} x^4dx = 0$
+- If b<a and $f$ is integrable on [a,b], then $\int^{b}_{a} f(x)dx = - \int^{a}_b f(x)dx$
+  - For example, $\int^{0}_{4} xdx = - \int^{4}_0 xdx = -\frac{x^2}{2}]_0^4 = -8$
+- If $f$ is continous and non-negative on $[a,b]$ and if $c$ is a point between $a$ and $b$, then the area under $y=f(x)$ over $[a,b]$ can be split into two parts, $a$ to $c$ and $c$ to $b$. Thus, $\int^{b}_{a} f(x)dx = \int^{c}_a f(x)dx + \int^{b}_c f(x)dx$
+   - For example, evaluate $\int{6}_{0} f(x)dx$ where $fx(x) = x^2$ when $x<=2$ and $f(x)= 3x-2$ when $x>=2$.
+    - To solve we say $\int^{2}_{0} x^2dx + \int^{6}_2 3x-2dx = \frac{x^3}{3}]_0^2 + \frac{3x^2}{2}-2x]_2^6 = \frac{128}{3}$
+     
+### U-Substitution for Definite Integrals
+- U-substitution also works for definite integrals. Now, to solve these problems follow these steps:
+  1. Start with problem is $\int f(g(x))g'(x)dx$ form
+  2. Make a choice for $u=g(x)$
+  3. Make a choice for $\frac{du}{dx} = g'(x)$, then find $du$ which is $du= g'(x)dx$.
+  4. Sub $u=g(x)$ and $du=g'(x)dx$ into the problem, such that it is in the form $\int f(u)du$
+  5. Evaluate the resultant integral from step 4, then sub $g(x)$ back in for $u$
+- For example, evaluate $\int^{2}_{0} 2x(x^2+1)^3dx$
+  - First, we say $u=(x^2+1)$
+  - Next, we say $\frac{du}{dx} = 2x$, so $du= 2xdx$
+  - Following substitution we get $\int^{2}_{0} (u)^3du$
+  - After evaluating integral we get $\frac{u^4}{4}]_0^2 = \frac{(x^2+1)^4}{4}]_0^2 = \frac{(2^2+1)^4}{4} - \frac{(0^2+1)^4}{4} = \frac{625}{4} - \frac{1}{4} = 156$
+
+### Mean Value Theorem For Definite Integrals 
+ - If $f$ is continous on a closed interval $[a,b]$, there is a number between the minimum $(m)$ and maximum $(M)$ value of the function representing an arithmatic average. The mean value of $f$ on $[a,b]$ is defined as $f_{avg} = \frac{1}{b-a} ⋅ \int^{b}_{a} f(x)dx$
+  - For example, find the average value of the function $f(x) = x^2$ on $[1,4]$
+    - $f_{avg} = \frac{1}{4-1} ⋅\int^{4}_{1} x^2dx = \frac{1}{3} ⋅ \frac{x^3}{3}]_1^4 = \frac{1}{3} ⋅ 21= 7$
+   
+### Area Between Two Curves
