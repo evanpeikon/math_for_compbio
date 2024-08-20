@@ -21,7 +21,7 @@ This repository contains a series of math tutorials for computational biology an
   - For example, $\frac{d}{dx}[(4x^2-1)(7x^3+x)]= (4x^2-1)\frac{d}{dx}[7x^3+x] + (7x^3+x)\frac{d}{dx}[4x^2-1] = (4x^2-1)(21x^2+1) + (7x^3+x)(8x) = 140x^4 - 9x^2 -1$
 - If f and g are differentiable at x and g(x)≠0, then $\frac{f}{g}$ is differentiable and $\frac{d}{dx} [\frac{f(x)}{g(x)}] = \frac{g(x)\frac{d}{dx}[f(x)] - f(x)\frac{d}{dx}[g(x)]}{[g(x]^2}$
 
-## The Chain Rule
+### The Chain Rule
 - Given the functions $f$ and $g$, we can find the composition, $f∘g$, which is expressed as $(f∘g)(x) = f(g(x))$. For example, if $f(x)=sinx$ and $g(x)=x^2-1$, $f(g(x))=sin(x^2-1)$.
 - To solve these types of problems we introduce the variable $u=g(x)$, such that $f(g(x)) = f(u)$. Using the previous example, if $u=x^2-1$, then $f(u)=sin(u)$.
 - Now, if we want the derivative of functions like $y=sin(x^2-1)$ we say that $\frac{dy}{dx} = \frac{dy}{du} ⋅ \frac{du}{dx} = \frac{d}{du}[ ] ⋅ \frac{d}{dx}[ ]$
@@ -42,13 +42,13 @@ This repository contains a series of math tutorials for computational biology an
   - 3b^2 = \frac{9-2){2-1} = 7$
   - If $3b^2=7$, then $b^2=\frac{7}{3}$ and thus, $b= \sqrt{\frac{7}{3}}$ and $-\sqrt{\frac{7}{3}}$. However, only the first of those two solutions falls within the range [1,2], fulfiling the mean value theorem.
  
-## Anti-Differentiation (Integration)
+## Integration / Indefinite Integrals 
 - Integration is the process of finding anti-derivatives. If $\frac{d}{dx}[F(x)]=f(x)$, then functions of the form $F(x)+c$ are anti-derivatives of $f(x)$. We denote this relationship as $\int f(x)dx = F(X)+c$.
   - For example, $\frac{x^3}{3}$,  $\frac{x^3}{3}+2$, and  $\frac{x^3}{3}-π$ are all anti-derivatives of the function $f(x)=x^2$ since $\frac{d}{dx}[\frac{x^3}{3}] = \frac{d}{dx}[\frac{x^3}{3}+2] = \frac{d}{dx}[\frac{x^3}{3}-π] = x^2$
 - Furthermore, if we differentiate the anti-derivative of a function, $f(x)$, we get $f(x)$ back again... $\frac{d}{dx}[\int f(x)dx] = \frac{d}{dx}[F(x)] = f(x)$.
   - For example, $\frac{d}{dx}[\int 2x^2dx] = \frac{d}{dx}[\frac{2x^3}{3}] = \frac{6x^2}{3} = 2x^2$
 
-## Integration by u-Substitution
+### Integration by u-Substitution
 - $u$-substitution can turn complex integration problems into simpler ones. If we want to evaluate a complex integral $\int h(x)dx$ we can say that $\int h(x)dx = \int f(g(x))g'(x)dx = \int[f(u)\frac{du}{dx}]dx = F(u)+c$ where $u=g(x)$ and $\frac{du}{dx} = g'(x)$.
 - Now, to solve these problems follow these steps:
   1. Start with problem is $\int f(g(x))g'(x)dx$ form
@@ -94,3 +94,9 @@ This repository contains a series of math tutorials for computational biology an
     - $f_{avg} = \frac{1}{4-1} ⋅\int^{4}_{1} x^2dx = \frac{1}{3} ⋅ \frac{x^3}{3}]_1^4 = \frac{1}{3} ⋅ 21= 7$
    
 ### Area Between Two Curves
+- If $f$ and $g$ are continous functions where $f(x)>g(x)$ for all $x$ on $[a,b]$, we can find the area bounded above by $f(x)$,  below by $g(x)$, and on the sides by $x=a$ and $x=b$ with the following formula: $A = \int^{b}_{a} f(x)dx - \int^{b}_a g(x)dx = \int^{b}_a [f(x)-g(x)]$.
+  - For example...  find the area bounded above by $y=x+6$, below by $y=x^2$, and on the sides by $x=0$ and $x=2$.
+    - $\int^{2}_{0} x+6dx - \int^{2}_0 x^2dx = \int^{2}_0 [x+6-x^2] dx = \frac{x^2}{2} + 6x - \frac{x^3}{3}]_0^2 = (\frac{2^2}{2} + 12 -  \frac{2^3}{3}) - (\frac{0^2}{2} + 0 -  \frac{0^3}{3})  = \frac{34}{3}$
+
+## Natural Logarithms
+- The integral $\int^{x}_1 \frac{1}{t} dt$ is called the natural logarithm of $x$ and is denoted by the symbol $ln$. Thus, $ln(x) = \int^{x}_1 \frac{1}{t}dt$
