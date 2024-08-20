@@ -4,7 +4,7 @@ This repository contains a series of math tutorials for computational biology an
 ## Techniques of Differentiation
 
 ### Fundamentals
-- According to the **power rule**, if $n$ is a posiitive integer, then... $\frac{d}{dx}[x^n] = nx^{n-1}$.
+- Differentiation is the process of finding derivatives. Differentiation is an operation that transforms a function $f$ into a new function $f'$. When the independent variable is $x$, the differentiation operation is denotes as $\frac{d}{dx}[ ]$, which can be read as the derivative with respect to $x$. According to the **power rule**, if $n$ is a posiitive integer, then... $\frac{d}{dx}[x^n] = nx^{n-1}$.
   - For example... $\frac{d}{dx}[x^5]= 5x^4$, $\frac{d}{dx}[2x^3]=6x^2$, and $\frac{d}{dx}[4x^1]=4$
 
 - If $c$ is a constant and the function $f$ is differentiable at $x$, then so is $$cf$ and $(cf)'(x) = cf'(x)$. Thus, $\frac{d}{dx}[cf(x)]=c \frac{d}{dx}[f(x)]$
@@ -40,4 +40,30 @@ This repository contains a series of math tutorials for computational biology an
   - $f(a) = 1^3+1=2$ and $f(c)=2^3+1=9$
   - Now, $f'(x)= \frac{d}{dx}[x^3+1] = 3x^2$
   - 3b^2 = \frac{9-2){2-1} = 7$
-  - If $3b^2=7$, then $b^2=\frac{7}{3}$ and thus, $b= \sqrt{\frac{7}{3}}$ and $-\sqrt{\frac{7}{3}}$. However, only the first of those two solutions falls within the range [1,2], fulfiling the mean value theorem. 
+  - If $3b^2=7$, then $b^2=\frac{7}{3}$ and thus, $b= \sqrt{\frac{7}{3}}$ and $-\sqrt{\frac{7}{3}}$. However, only the first of those two solutions falls within the range [1,2], fulfiling the mean value theorem.
+ 
+## Anti-Differentiation (Integration)
+- Integration is the process of finding anti-derivatives. If $\frac{d}{dx}[F(x)]=f(x)$, then functions of the form $F(x)+c$ are anti-derivatives of $f(x)$. We denote this relationship as $\int f(x)dx = F(X)+c$.
+  - For example, $\frac{x^3}{3}$,  $\frac{x^3}{3}+2$, and  $\frac{x^3}{3}-π$ are all anti-derivatives of the function $f(x)=x^2$ since $\frac{d}{dx}[\frac{x^3}{3}] = \frac{d}{dx}[\frac{x^3}{3}+2] = \frac{d}{dx}[\frac{x^3}{3}-π] = x^2$
+- Furthermore, if we differentiate the anti-derivative of a function, $f(x)$, we get $f(x)$ back again... $\frac{d}{dx}[\int f(x)dx] = \frac{d}{dx}[F(x)] = f(x)$.
+  - For example, $\frac{d}{dx}[\int 2x^2dx] = \frac{d}{dx}[\frac{2x^3}{3}] = \frac{6x^2}{3} = 2x^2$
+
+## Integration by u-Substitution
+- $u$-substitution can turn complex integration problems into simpler ones. If we want to evaluate a complex integral $\int h(x)dx$ we can say that $\int h(x)dx = \int f(g(x))g'(x)dx = \int[f(u)\frac{du}{dx}]dx = F(u)+c$ where $u=g(x)$ and $\frac{du}{dx} = g'(x)$.
+- Now, to solve these problems follow these steps:
+  1. Start with problem is $\int f(g(x))g'(x)dx$ form
+  2. Make a choice for $u=g(x)$
+  3. Make a choice for $\frac{du}{dx} = g'(x)$, then find $du$ which is $du= g'(x)dx$.
+  4. Sub $u=g(x)$ and $du=g'(x)dx$ into the problem, such that it is in the form $\int f(u)du$
+  5. Evaluate the resultant integral from step 4, then sub $g(x)$ back in for $u$
+- Let's try an example... $\int (x^2+1)^{50} ⋅ 2xdx$
+  - Now, we say $u=x^2+1$ and $\frac{du}{dx}=2x}, so $du=2xdx$
+  - The after substitution, the resultant integral is $\int (u)^{50}⋅du$
+  - After evaluating the integral we get $\frac{u^{51}}{51}+c$, then after substituting $g(x)$ back in we get $\frac{(x^2+1)^{51}}{51}+c$
+
+## Definite Integrals
+- If $f$ is continous on [a,b] and if $F$ is the anti-derivative of $f$ on [a,b], then $\int^{b}_{a} f(x)dx = F(x)]_a^b = F(b)-F(a)$
+  - Evaluate $\int^{2}_{1} xdx$
+    - $\int^{2}_{1}xdx = \frac{x^2}{2}]_1^2 = \frac{2^2}{2} - \frac{1^2}{2} = \frac{4}{2} - \frac{1}{2} = \frac{3}{2}$
+- Properies of the definite integral...
+  - If $a$ is in the domain of $f$, then $\int^{a}_{a} f(x)dx = 0$ because there is no area under th e curve $y=f(x)$ above the x-axis. 
