@@ -1,4 +1,4 @@
-This repository contains a series of math tutorials for computational biology and bioinformatics. Upon completion, it will be broken into three sections: calculus, linear algebra, and ordinary differential equations. 
+This repository contains a series of math tutorials for computational biology and bioinformatics. 
 
 # 📚 Calculus 
 ## Techniques of Differentiation
@@ -57,7 +57,7 @@ This repository contains a series of math tutorials for computational biology an
   4. Sub $u=g(x)$ and $du=g'(x)dx$ into the problem, such that it is in the form $\int f(u)du$
   5. Evaluate the resultant integral from step 4, then sub $g(x)$ back in for $u$
 - Let's try an example... $\int (x^2+1)^{50} ⋅ 2xdx$
-  - Now, we say $u=x^2+1$ and $\frac{du}{dx}=2x}, so $du=2xdx$
+  - Now, we say $u=x^2+1$ and $\frac{du}{dx}=2x$, so $du=2xdx$
   - The after substitution, the resultant integral is $\int (u)^{50}⋅du$
   - After evaluating the integral we get $\frac{u^{51}}{51}+c$, then after substituting $g(x)$ back in we get $\frac{(x^2+1)^{51}}{51}+c$
 
@@ -68,9 +68,4 @@ This repository contains a series of math tutorials for computational biology an
 - Properies of the definite integral...
   - If $a$ is in the domain of $f$, then $\int^{a}_{a} f(x)dx = 0$ because there is no area under th e curve $y=f(x)$ above the x-axis.
     - For example, $\int^{5}_{5} x^4dx = 0$
-
-If $b<a$ and $f$ is integrable on $[a,b]$, then ...
-$\int^{b}_{a} f(x)dx = - \int^{a}_{b} f(x)dx$
-
-ex)
-$\int^{0}_{4} xdx = - \int^{4}_{0} xdx = - \frac{x^2}{2}}_{0}_{4} = -8$
+  - More properties on notebook pg. 110
