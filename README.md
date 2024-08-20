@@ -65,7 +65,7 @@ This repository contains a series of math tutorials for computational biology an
 - Additional techniques of integration are as follows:
   1. $\int dx= x+c$
   2. $\int adx = ax+c$
-  3. $\int x^r dx = \frac{x^{r+1}{r+1} + c$, $r$≠1
+  3. $\int x^r dx = \frac{x^{r+1}}{r+1} + c$, $r≠1$
   4. $\int \frac{1}{x} = ln|x|+c$
   5. $\int e^xdx = e^x+c$
   6. $\int a^xdx = \frac{a^x}{ln(a)} +c$
@@ -78,7 +78,7 @@ This repository contains a series of math tutorials for computational biology an
   3. Calculate $f'(x)$, then say $f'(x)(dx) = du$
   4. Identify $g'(x)$ and say $g'(x)dx = dv$
   5. Now, calcualte $g(x)$ and say $g(x)=v$
-  6. Write $\int (u)(dv) = (u)(v) - \int (v)(du)$
+  6. Write $\int (u)(dv) = (u)(v) - \int (v)(du)$ or for definite integrals write $\int^{b}_{a} (u)(dv) = (u)(v)]_b^a - \int^{b}_a (v)(du)$
   7. Plug variables back into formula from 6, then evaluate.
 - For example, evaluate $\int xe^xdx$
   - First, we say $f(x) = x$, so $x=u$
