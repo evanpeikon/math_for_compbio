@@ -61,6 +61,32 @@ This repository contains a series of math tutorials for computational biology an
   - The after substitution, the resultant integral is $\int (u)^{50}⋅du$
   - After evaluating the integral we get $\frac{u^{51}}{51}+c$, then after substituting $g(x)$ back in we get $\frac{(x^2+1)^{51}}{51}+c$
 
+### Techniques of Integration 
+- Additional techniques of integration are as follows:
+  1. $\int dx= x+c$
+  2. $\int adx = ax+c$
+  3. $\int x^r dx = \frac{x^{r+1}{r+1} + c$, $r$≠1
+  4. $\int \frac{1}{x} = ln|x|+c$
+  5. $\int e^xdx = e^x+c$
+  6. $\int a^xdx = \frac{a^x}{ln(a)} +c$
+ 
+### Integration by Parts
+- Integration by parts is a technique for evaluating integrals that do not fit basic formulas. The formula for integration by parts allows one ot reduce complex integration problems into easier ones and is defined as $\int f(x)g'(x)dx = f(x)g(x) - \int g(x)f'(x)dx$
+- Here's how to solve the eqution above...
+  1. Write the equation in $\int f(x)g'(x)dx$ form
+  2. Identify $f(x)$, then say $f(x)=u$
+  3. Calculate $f'(x)$, then say $f'(x)(dx) = du$
+  4. Identify $g'(x)$ and say $g'(x)dx = dv$
+  5. Now, calcualte $g(x)$ and say $g(x)=v$
+  6. Write $\int (u)(dv) = (u)(v) - \int (v)(du)$
+  7. Plug variables back into formula from 6, then evaluate.
+- For example, evaluate $\int xe^xdx$
+  - First, we say $f(x) = x$, so $x=u$
+  - Then, we find $f'(x)$, which is 1, so $f'(x)dx= 1dx$
+  - Next, we say $g'(x) = e^x$, so $e^xdx = dv$
+  - Then we calculate $g(x)$ and get $e^x=v$
+  - After substiution into the formula  $\int (u)(dv) = (u)(v) - \int (v)(du)$ we get $\int xe^xdx = xe^x - \int e^xdx = xe^x - e^x +c$
+
 ## Definite Integrals
 - If $f$ is continous on [a,b] and if $F$ is the anti-derivative of $f$ on [a,b], then $\int^{b}_{a} f(x)dx = F(x)]_a^b = F(b)-F(a)$
   - Evaluate $\int^{2}_{1} xdx$
@@ -102,3 +128,31 @@ This repository contains a series of math tutorials for computational biology an
 - The integral $\int^{x}_1 \frac{1}{t} dt$ is called the natural logarithm of $x$ and is denoted by the symbol $ln$. Thus, $ln(x) = \int^{x}_1 \frac{1}{t}dt$
 - Since $ln(x) = \int^{x}_1 \frac{1}{t}dt$, we can say that $lnx$ is the antiderivative of $\frac{1}{x}$ and $lnx$ equals 0 when $x=1$. Thus, $\frac{d}{dx}[lnx] = \frac{1}{x}$.
   - For example, $\frac{d}{dx}[ln2] = \frac{1}{2}$
+- For more complex derivatives of natural logaritms we can use the chain rule, which states $\frac{d}{dx}[lnu] = \frac{d}{du}[lnu] ⋅ \frac{du}{dx} = \frac{1}{u} ⋅ \frac{d}{dx}[ ]$
+  - For example, $\frac{d}{dx}[lnx^2] = \frac{d}{du}[lnx^2] ⋅ \frac{du}{dx} = \frac{1}{x^2} ⋅ \frac{d}{dx}[x^2] = \frac{1}{x^2} ⋅ 2x = \frac{2}{x}$
+- The same concepts apply for integration as well. For example, evaluate $\int \frac{3x^2}{x^3+5}$ using $u$-substitution
+  - First, we can re-write $\int \frac{3x^2}{x^3+5}$ as $\int \frac{1}{x^3+5} 3x^2dx$
+  - Then, we say $u=x^3+5$
+  - Next, we say $\frac{du}{dx} = 3x^2$, so $du = 3x^2dx$
+  - Following substiution we get $\int \frac{1}{u} dx$
+  - After evaluating the integral we get $lnu+c$ and upon substituing $u$ back in the result is $ln|x^3+5|+c$
+ 
+### Properties of Natural Logarithms
+- For any positive numbers $a$ and $b$ and any rational numbenr $r$....
+  1. $ln(ab) = ln(a) + lb(b)$
+  2. $ln(\frac{a}{b}) = ln(a)-ln(b)$
+  3. $ln(a)^r = rln(a)
+  4. $ln(\sqrt{a}) = \frac{1}{2} ln(a)$
+  5. $ln(\frac{1}{b}) = -ln(b)$
+
+### The Functions $e^x$ and $a^x$
+- $e^x$ is called the exponential function and has a special property where it can undo the natural logarithm and vice versa. Thus, $ln(e^x)=x$ and $e^{lnx} = x$
+  - For example, $ln(e^2)=2$ and $e^{ln2}=2$
+- Additionally, if $a$ is a positive real number and $k$ is any real number, then...
+  1. $a^k = e^{kln(a)}$
+  2. $\frac{d}{dx}[a^x] = a^xln(a)$
+  3. $\frac{d}{dx}[e^x] = e^x$
+  4. $\frac{d}{dx}[a^u] = a^u ln(a)⋅\frac{du}{dx}[ ]$
+  5. $\frac{d}{dx}[e^u] = e^u ⋅\frac{du}{dx}[ ]$
+  6. $\int a^xdx = \frac{a^x}{ln(a)}+c$
+  7. $int\ e^xdx = e^x +c$
