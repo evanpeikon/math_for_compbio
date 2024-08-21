@@ -173,4 +173,10 @@ This repository contains a series of math tutorials for computational biology an
 - On the other hand, $\int^{b}_{a} f(x,y)dy$ is a partial integral with repect to $y$ and is evaluated by holding $x$ constant and integrating with respect to $y$.
   - For example, $\int^{1}_{0} xy^2dy = \frac{x y^3}{3}]_0^1 = \frac{x 1^3}{3} - \frac{x 0^3}{3} = \frac{x}{3}$
 
-## Second Order Partial Derivatives
+## Second, Third, and Fourth Order Partial Derivatives
+- Since the partial derivatives $\frac{∂z}{∂x}$ and $\frac{∂z}{∂y}$ are functions of $x$ and $y$, each can in turn have partial derivatives, giving rise to four possible second order partial derivaive:
+  1. $f_{xx} = \frac{∂^2f}{∂x^2} = \frac{∂}{∂x}[\frac{∂f}{∂x}]$
+  2. $f_{yy} = \frac{∂^2f}{∂y^2} = \frac{∂}{∂y}[\frac{∂f}{∂y}]$
+  3. $f_{xy} = \frac{∂^2f}{∂y∂x} = \frac{∂}{∂y}[\frac{∂f}{∂x}]$
+  4. $f_{yx} = \frac{∂^2f}{∂x∂y} = \frac{∂}{∂x}[\frac{∂f}{∂y}]$
+
