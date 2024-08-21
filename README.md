@@ -189,5 +189,6 @@ This repository contains a series of math tutorials for computational biology an
   2. $\frac{∂^3f}{∂y^3} = \frac{∂}{∂y}[\frac{∂^2f}{∂y^2}]$
   3. $\frac{∂^3f}{∂y∂x^2} = \frac{∂}{∂y}[\frac{∂^2f}{∂x^2}]$
   4. $\frac{∂^3f}{∂x∂y^2} = \frac{∂}{∂x}[\frac{∂^2f}{∂y^2}]$
-- We can also continue differentiating to achieve higher order partial derivatives. For example, fourth order partial derivatives can take the form $\frac{∂^4f}{∂x^2∂y^2} = \frac{∂}{∂y}[\frac{∂^3f}{∂y∂x^3}]$
+- We can also continue differentiating to achieve higher order partial derivatives. For example, fourth order partial derivatives can take the form $\frac{∂^4f}{∂x^2∂y^2} = \frac{∂}{∂y}[\frac{∂^3f}{∂y∂x^2}]$
 
+## The Chain Rule for Functions of Two Variables 
