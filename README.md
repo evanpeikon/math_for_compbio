@@ -156,3 +156,21 @@ This repository contains a series of math tutorials for computational biology an
   5. $\frac{d}{dx}[e^u] = e^u ⋅\frac{du}{dx}[ ]$
   6. $\int a^xdx = \frac{a^x}{ln(a)}+c$
   7. $int\ e^xdx = e^x +c$
+ 
+## First Order Partial Derivatives
+- For function of $x$ and $y$, we can find partial derivative $f_{x}(x_0, y_0)$ by holding $y$ constant and differentiating with respect to $x$ and $f_{y}(x_0, y_0)$ by holdong $x$ constant and differentiating with respect to $y$.
+- For example, if $f(x,y) = 2x^3y^2+2y+4x$, find $f_{x}(1,2)$ and $f_{y}(1,2)$
+  - First, $f_{x}(x,y) = 6x^2y^2+4$, so $f_{x}(1,2) = 6(1)^2(2)^2+4=28$
+  - Second, $f_{y}(x,y) = 4x^3y+2$, so $f_{y}(1,2)= 4(1)^3(2)+2=10$
+- $f_{x}(x_0, y_0)$ is also denoted as $\frac{∂f}{∂x}$ and $f_{y}(x_0, y_0)$ is $\frac{∂f}{∂y}$. If the independent variable $z=f(x,y)$ is introduced, we use the following symbols instead: $\frac{∂z}{∂x}$ and $\frac{∂z}{∂y}$
+  - For example, $z=x^4sin(xy^3)$. Find  $\frac{∂z}{∂x}$ and $\frac{∂z}{∂y}$
+    - $\frac{∂z}{∂x}$ = $\frac{∂}{∂x}[x^4sin(xy^3)] = x^4\frac{∂}{∂x}[sin(xy^3)] + sin(xy^3)\frac{∂}{∂x}[x^4]= x^4cos(xy^3)y^3+sin(xy^3)(4x^3)= x^4y^3cos(xy^3)+4x^3sin(xy^3)$
+    - $\frac{∂z}{∂y}$ = $\frac{∂}{∂y}[x^4sin(xy^3)] = x^4\frac{∂}{∂y}[sin(xy^3)] + sin(xy^3)\frac{∂}{∂y}[x^4]= x^4cos(xy^3)3xy^2+sin(xy^3)(0)= 3x^5y^2cos(xy^3)$
+
+## Partial Integrals 
+- A partial integral is the inverse of a partial derivative. $\int^{b}_{a} f(x,y)dx$ is a partial integral with respect to $x$ and is evaluated by holding $y$ constant and integrating with repect to $x$.
+  - For example, $\int^{1}_{0} xy^2dx = \frac{x^2 y^2}{2}]_0^1= \frac{1^2 y^2}{2} - \frac{0^2 y^2}{2} = \frac{y^2}{2}$
+- On the other hand, $\int^{b}_{a} f(x,y)dy$ is a partial integral with repect to $y$ and is evaluated by holding $x$ constant and integrating with respect to $y$.
+  - For example, $\int^{1}_{0} xy^2dy = \frac{x y^3}{3}]_0^1 = \frac{x 1^3}{3} - \frac{x 0^3}{3} = \frac{x}{3}$
+
+## Second Order Partial Derivatives
