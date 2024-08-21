@@ -179,4 +179,15 @@ This repository contains a series of math tutorials for computational biology an
   2. $f_{yy} = \frac{∂^2f}{∂y^2} = \frac{∂}{∂y}[\frac{∂f}{∂y}]$
   3. $f_{xy} = \frac{∂^2f}{∂y∂x} = \frac{∂}{∂y}[\frac{∂f}{∂x}]$
   4. $f_{yx} = \frac{∂^2f}{∂x∂y} = \frac{∂}{∂x}[\frac{∂f}{∂y}]$
+- For example, find the second order partial derivatives of $f(x,y)= x^2y^3+x^4y$
+  - $f_{xx}= \frac{∂}{∂x}[\frac{∂f}{∂x}] = \frac{∂}{∂x}[2xy^3+4x^3y]= 2y^3+12x^2y]$
+  - $f_{yy}= \frac{∂}{∂y}[\frac{∂f}{∂y}] = \frac{∂}{∂y}[3x^2y^2+x^4]= 6x^2y$
+  - $f_{xy}= \frac{∂}{∂y}[\frac{∂f}{∂x}] = \frac{∂}{∂y}[2xy^3+4x^3y]= 6xy^2 + 4x^3$
+  - $f_{yx}= \frac{∂}{∂x}[\frac{∂f}{∂y}] = \frac{∂}{∂x}[3x^2y^2+x^4] = 6xy^2 + 4x^3$
+- With successive differentiation, we can obtain the following third order partial derivatives...
+  1. $\frac{∂^3f}{∂x^3} = \frac{∂}{∂x}[\frac{∂^2f}{∂x^2}]$
+  2. $\frac{∂^3f}{∂y^3} = \frac{∂}{∂y}[\frac{∂^2f}{∂y^2}]$
+  3. $\frac{∂^3f}{∂y∂x^2} = \frac{∂}{∂y}[\frac{∂^2f}{∂x^2}]$
+  4. $\frac{∂^3f}{∂x∂y^2} = \frac{∂}{∂x}[\frac{∂^2f}{∂y^2}]$
+- We can also continue differentiating to achieve higher order partial derivatives. For example, fourth order partial derivatives can take the form $\frac{∂^4f}{∂x^2∂y^2} = \frac{∂}{∂y}[\frac{∂^3f}{∂y∂x^3}]$
 
