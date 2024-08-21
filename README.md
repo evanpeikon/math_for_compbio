@@ -215,3 +215,14 @@ This repository contains a series of math tutorials for computational biology an
   - For example, if $w=x^3y^2z$, $x=t^2$, $y=t^3$, and $z=t^4$, find $\frac{dw}{dt}$
     - $\frac{dw}{dt} = \frac{∂}{∂x}[x^3y^2z]\frac{d}{dt}[t^2] + \frac{∂}{∂y}[x^3y^2z]\frac{d}{dt}[t^3] + \frac{∂}{∂z}[x^3y^2z]\frac{d}{dt}[t^4] = (3x^2y^2z)(2t) + (2x^3yz)(3t^2) + (x^3y^2)(4t^3) = (6x^2y^2zt) + (6x^3yzt^2) + (4x^3y^2t^3) = (6t^15) + (6t^15) + (4t^15) = 16t^15$
 
+## Double Integrals
+### Double Integrals Over Rectangular Regions
+- The following are called iterated or repeated integrals:
+  1. $\int^{d}_c [\int^{b}_a f(x,y)dx]dy$
+  2. $\int^{d}_c [\int^{b}_a f(x,y)dy]dx$
+- Below I'll demonstrate how to evaluate the double integral $\int^{3}_0 [\int^{2}_1 (1+8xy)dy]dx$
+  - $\int^{3}_0 [\int^{2}_1 (1+8xy)dy]dx =\int^{3}_0 [1y+\frac{8xy^2}{2}]_1^2 dx = \int^{3}_0 [(2+16x)-(1+4x)] dx = \int^{3}_0 1+12xdx = 1x + \frac{12x^2}{2}]_0^3 = 57$
+  - Notably, the double integral $\int^{2}_1 [\int^{3}_0 (1+8xy)dx]dy$ would produce the same results since we are working in a rectangle defined by inequalities a<=x<=b, c<=y<=d, thus $\int \int f(x,y)dA = \int^{d}_c \int^{b}_a f(x,y)dxdy = \int^{b}_a \int^{d}_c f(x,y)dydx$
+
+### Double Integrals Over Non-Rectangular Regions
+- Double integrals over non-rectangular regions can fit into one of two categories, type I or type II, each with different rules: **see page 119 in notebook
