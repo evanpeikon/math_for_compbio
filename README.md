@@ -103,7 +103,7 @@ This repository contains a series of math tutorials for computational biology an
      
 ### U-Substitution for Definite Integrals
 - U-substitution also works for definite integrals. Now, to solve these problems follow these steps:
-  1. Start with problem is $\int f(g(x))g'(x)dx$ form
+  1. Start with problem is $\int^{b}_{a} f(g(x))g'(x)dx$ form
   2. Make a choice for $u=g(x)$
   3. Make a choice for $\frac{du}{dx} = g'(x)$, then find $du$ which is $du= g'(x)dx$.
   4. Sub $u=g(x)$ and $du=g'(x)dx$ into the problem, such that it is in the form $\int f(u)du$
