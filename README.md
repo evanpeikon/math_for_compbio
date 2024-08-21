@@ -192,3 +192,26 @@ This repository contains a series of math tutorials for computational biology an
 - We can also continue differentiating to achieve higher order partial derivatives. For example, fourth order partial derivatives can take the form $\frac{∂^4f}{∂x^2∂y^2} = \frac{∂}{∂y}[\frac{∂^3f}{∂y∂x^2}]$
 
 ## The Chain Rule for Functions of Two Variables 
+- If $x=x(t)$ and $y=y(t)$ are differentiable at $t$, and if $z=f(x,y)$ is differentiable at $(x(t), y(t))$, then $z=f(x(t),y(t))$ is differentiable at $t$ and is defined by $\frac{∂z}{∂t} = \frac{∂z}{∂x}⋅\frac{dx}{dt} + \frac{∂z}{∂y}⋅\frac{dy}{dt}$
+  - For example, $z=x^2y, x=t^2, y=t^3$. Find $\frac{∂z}{∂t}$
+    - $\frac{∂z}{∂t} = \frac{∂}{∂x}[x^2y]\frac{d}{dt}[t^2]+\frac{∂}{∂y}[x^2y]\frac{d}{dt}[t^3] = (2xy)(2t)+(x^2)(3t^2) = (4xyt)+(3x^2t^2)= (4t^2t^3t)+(3(t^2)^2)t^2)= 4t^6 + 3t^6 = 7t^6$
+- In special cases where $z=F(x,y)$ and $y$ is a differentiable function of $x$, the chain rule says $\frac{dy}{dx} = - \frac{\frac{∂F}{∂x}}{\frac{∂F}{∂y}}$
+  - For example, find $\frac{dy}{dx}$ given $x^3+y^2x$
+    - $\frac{dy}{dx} = \frac{\frac{∂}{∂x}[x^3+y^2-3]}{\frac{∂}{∂y}[x^3+y^2-3]} = - \frac{3x^2+y^2}{2yx}$
+- Now, consider a case where $x$ and $y$ are each functions of two variables $u$ and $v$ themselves. If $x=x(u,v)$ and $y=y(u,v)$ and they have first order partial derivatives at $(u,v)$ and $z=f(x,y)$ is differentiable at $(x(u,v),y(u,v))$, then $z=f(x(u,v),y(u,v))$ has  a first order partial derivatives at $(u,v)$, defined by the following formulas:
+  1. $\frac{∂z}{∂u} = \frac{∂z}{∂x}⋅\frac{∂x}{∂u} +  \frac{∂z}{∂y}⋅\frac{∂y}{∂u}$
+  2. $\frac{∂z}{∂v} = \frac{∂z}{∂x}⋅\frac{∂x}{∂v} +  \frac{∂z}{∂y}⋅\frac{∂y}{∂v}$
+    - For example, find $\frac{∂z}{∂u}$ and $\frac{∂z}{∂v}$ given $z=3xty^2$, $x=2u+v$ and $y=\frac{u}{v}$
+      - $\frac{∂z}{∂u} = \frac{∂}{∂x}[3x+y^2]\frac{∂}{∂u}[2u+v] + \frac{∂}{∂y}[3x+y^2]\frac{∂}{∂u}[\frac{u}{v}] = (3)(2) + (2y)(\frac{1}{v}) = 6+\frac{2y}{v}$
+      - $\frac{∂z}{∂v} = \frac{∂}{∂x}[3x+y^2]\frac{∂}{∂v}[2u+v] + \frac{∂}{∂y}[3x+y^2]\frac{∂}{∂v}[\frac{u}{v}] = (3)(1)+(2y)(\frac{u}{1}) = 3+2yu$
+
+## Functions of Three Variables
+- A function of $f(x,y,z)$ with three variables has three partial derivatives $f_{x}(x,y,z)$, $f_{y}(x,y,z)$, and $f_{z}(x,y,z)$. If a dependent variables $x=f(x,y,z)$ is used, the partial derivatives are denoted as $\frac{∂w}{∂x}$, $\frac{∂w}{∂y}$, and $\frac{∂w}{∂z}$.
+  - For example, find partial derivatives for $f(x,y,z)=x^3y^2z^4+2xy+z$
+    - $f_{x} = 3x^2y^2z^4+2y$
+    - $f_{y} = 2x^3yz^4+2x$
+    - $f_{z} = 4x^3y^2z^3+1$
+- If $x=x(t)$, $y=y(t)$, and $z=z(t)$ are differentiable at $t$ and $w=f(x,y,z)$ is differentiable at $(x(t), y(t), z(t))$, then $w=f(x(t),y(t),z(t))$ is differentiable at $t$ and $\frac{dw}{dt} = \frac{∂w}{∂x}⋅\frac{dx}{dt} +  \frac{∂w}{∂y}⋅\frac{dy}{dt} +  \frac{∂w}{∂z}⋅\frac{dz}{dt}$
+  - For example, if $w=x^3y^2z$, $x=t^2$, $y=t^3$, and $z=t^4$, find $\frac{dw}{dt}$
+    - $\frac{dw}{dt} = \frac{∂}{∂x}[x^3y^2z]\frac{d}{dt}[t^2] + \frac{∂}{∂y}[x^3y^2z]\frac{d}{dt}[t^3] + \frac{∂}{∂z}[x^3y^2z]\frac{d}{dt}[t^4] = (3x^2y^2z)(2t) + (2x^3yz)(3t^2) + (x^3y^2)(4t^3) = (6x^2y^2zt) + (6x^3yzt^2) + (4x^3y^2t^3) = (6t^15) + (6t^15) + (4t^15) = 16t^15$
+
