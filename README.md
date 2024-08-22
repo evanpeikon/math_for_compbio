@@ -278,6 +278,16 @@ $$\begin{pmatrix}
     - $x_5 = t$
     - $x_6 = \frac{1}{3}$
 
-## Matrix Products As Linear Combinations
-- If $A$ is a $mxn$ matrix and $x$ is a $nx1$ column vector, $Ax$ can be expressed as a linear combination of column vectors of $A$ where coefficients are entries of $x$. 
+# 📚 Ordinary Differential Equations:
+## Introduction
+- Differential equations are equations that relate one or more unknown functions to their derivatives. For example
+  1. $\frac{dy}{dx} = 3y$
+  2. $\frac{d^2y}{d^2x} - 6\frac{dy}{dx} + 8y =0$
+  3. $y'-y = e^{2x}$
+  4. $\frac{d^3y}{d^3x} - t\frac{dy}{dx} + (t^2-1)y = c^t$
+- Equations 1-3 above show $y=y(x)$ as an unknown function of $x$, whereas equation 4 have $y=y(t)$ as an unknown function of $t$.
+- The order of a differential equation is the order of the highest derivative that appears in the equation. Thus, equation 1 and 3 are first order ODEs, equation 2 is a second order ODE, and equation 4 is a third order ODE.
+- A function $y=y(x)$ is a solution to an ODE if the equation is satisfied when $y(x)$ and it's derivatives are substituted. For example, $\frac{dy}{dx} -y = e^{2x}$ has the solution $y=e^{2x}$. 
+ 
+## Introduction
 
