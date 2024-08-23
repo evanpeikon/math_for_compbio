@@ -318,9 +318,9 @@ $$\begin{pmatrix}
   - Step 4: multiple both sides of the equation by the integrating factor, $µ(x)$. The left side of the equation will simply to the derivative $\frac{d}{dx}[µ(x)y]$, leaving you with the following: $\frac{d}{dx}[µ(x)y] = µ(x)q(x)$
   - Step 5: integrate both sides, resulting in the following: $\int \frac{d}{dx}[µ(x)y] = \int µ(x)q(x) → µ(x)y = \int µ(x)q(x) + c$
   - Step 6: solve for $y$ by dividing both sides by $µ(x)$
-- Example: solve $frac{dy}{dx} - 4xy=x$
+- Example: solve $\frac{dy}{dx}-4xy=x$
   - If $frac{dy}{dx} - 4xy=x$, then $p(x)=-4x$ and $q(x)=x$
-  - $µ(x) = e^{\int -4xdx} = e^{-2x^2}
+  - $µ(x) = e^{\int -4xdx} = e^{-2x^2}$
   - $\frac{d}{dx}[e^{-2x^2}y]= e^{-2x^2}x$
   -  $\int \frac{d}{dx}[e^{-2x^2}y]= \int e^{-2x^2}x → e^{-2x^2}y = -\frac{e^{-2x^2}}{4}+c → y= -\frac{1}{4}+ce^2x^2$
  
