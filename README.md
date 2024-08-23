@@ -289,7 +289,8 @@ $$\begin{pmatrix}
 - The order of a differential equation is the order of the highest derivative that appears in the equation. Thus, equation 1 and 3 are first order ODEs, equation 2 is a second order ODE, and equation 4 is a third order ODE.
 - A function $y=y(x)$ is a solution to an ODE if the equation is satisfied when $y(x)$ and it's derivatives are substituted. For example, $\frac{dy}{dx} -y = e^{2x}$ has the solution $y=e^{2x}$. 
  
-## First Order Seperable ODEs:
+## First Order Ordinary Differential Equations:
+### First Order Seperable ODEs
 - A first order ODE is seperable if it can be written in the form $\frac{dy}{dx}=g(x)h(y)$ or $\frac{dy}{dx}=\frac{g(x)}{h(y)}$. These two types of equations are called the pre-differential form because the $x$ and $y$ variables are not seperate.
 - To solve these types of problems we...
   - Step 1: write the equation in differential form by seperating the $x$ and $y$ variables.
@@ -304,3 +305,39 @@ $$\begin{pmatrix}
   - $\frac{dy}{dx} = \frac{x}{y^2} → y^2dy = xdx → \int y^2dy = \int xdx → \frac{y^3}{3} = \frac{x^2}{2}+c → y^3 = \frac{3x^2}{2}+3c → y = (\frac{3x^2}{2}+3c)^{1/3}$
 - Example 2: solve $x(y-1)\frac{dy}{dx} = y$
   - $x(y-1_\frac{dy}{dx} = y → x(y-1)dy = ydx → (y-1)dy = \frac{ydx}{x} → \frac{(y-1)dy}{y} = \frac{dx}{x} → \frac{y-1}{y}dy = \frac{1}{x}dx → \int \frac{y-1}{y}dy = \int \frac{1}{x}dx → y-ln|y| = ln|x|+c$, which using the properties of logarithms simplifies to $y=ln|xy|+c$
+- In some cases there are initial conditions and the 1st order ODE is called an initial value problem. In these cases we include step 4, described above, when solving the problem. For example, solve $\frac{dy}{dx} = -4xy^2$ with the condition $y(0)=1$, which means when $x=0, y=1$.
+  -  $\frac{dy}{dx} = -4xy^2 → dy= -4xy^2dx → \frac{1}{y^2}dy = -4xdx → \int \frac{1}{y^2}dy = \int -4xdx → -\frac{1}{y} = -2x^2+c → y= \frac{1}{2x^2+c}$. Now, from the initial condition we get $1=\frac{1}{2(0)^2+c} → 1=\frac{1}{c}$, then $c=1$ and $y= \frac{1}{2x^2+1}$
+
+### First Order Linear ODEs
+- Not all first order ODEs are seperable. These ODEs are calld linear if they are expressed in the following form: $\frac{dy}{dx} + p(x)y = q(x)$.
+  - For example, $\frac{dy}{dx} + x^2y=e^x$ where $p(x)=x^2$ and $q(x)=e^x$
+- To solve these types of problems we...
+  - Step 1: start with the ODE in $\frac{dy}{dx} + p(x)y = q(x)$ form.
+  - Step 2: identify $p(x)$ and $q(x)$. 
+  - Step 3: find the integrating factor $µ(x)$, which is calculated as follows: $µ(x) = e^{\int p(x)dx}$
+  - Step 4: multiple both sides of the equation by the integrating factor, $µ(x)$. The left side of the equation will simply to the derivative $\frac{d}{dx}[µ(x)y]$, leaving you with the following: $\frac{d}{dx}[µ(x)y] = µ(x)q(x)$
+  - Step 5: integrate both sides, resulting in the following: $\int \frac{d}{dx}[µ(x)y] = \int µ(x)q(x) → µ(x)y = \int µ(x)q(x) + c$
+  - Step 6: solve for $y$ by dividing both sides by $µ(x)$
+- Example: solve $frac{dy}{dx} - 4xy=x$
+  - If $frac{dy}{dx} - 4xy=x$, then $p(x)=-4x$ and $q(x)=x$
+  - $µ(x) = e^{\int -4xdx} = e^{-2x^2}
+  - $\frac{d}{dx}[e^{-2x^2}y]= e^{-2x^2}x$
+  -  $\int \frac{d}{dx}[e^{-2x^2}y]= \int e^{-2x^2}x → e^{-2x^2}y = -\frac{e^{-2x^2}}{4}+c → y= -\frac{1}{4}+ce^2x^2$
+ 
+ ### Exponential Growth and Decay 
+ - Exponential growth adn decay are examples of first order differential equations. A quantity has an exponential growth or decay if at each instant in tme it's rate of increase or decrease is proportional to the amount of quantity present.
+ - Exponential growth and decay problems are often presented as linear ODES in the form $\frac{dy}{dx}=ky$ with an initial value of $y(0)=y_0$. However, we can re-write the problem in $\frac{dy}{dx}+p(x)y=q(x)$ form as $\frac{dy}{dt} -ky=0$. After solving this problem we get the following formula: $y(t) = y_0 e^{kt}$ where $t=time$, $y_0=starting quantity$, and $k=growth/decay rate$.
+- Example problem: the world population in 1975 is 4B people and grows at a rate of 2%/yr. What is the population in 2000?
+  - from the problem we get... $y_0=4B$, $k=0.02, t=0$ in 1975, and $t=25$ in 2000.
+  - thus, $y(25)=4e^{0.02 * 25} = 6.59B$
+- Now, we can also use the following formulas to calcualte the doubling and halving time of the population...
+  - $T=\frac{1}{k}ln2$ is the doubling time and $T=-\frac{1}{k}ln2$ is the halving time (ex, radioactive decay).
+ 
+## Second Order Ordinary Differential Equations
+### Homogenous Linear Equations
+
+### Non-Homogenous Linear Equations 
+
+## Systems Of First Order Ordinary Differential Equations
+
+## Solving Non-Homogenous Systems Of Ordinary Differential Equations
