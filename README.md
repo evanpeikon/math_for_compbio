@@ -289,5 +289,15 @@ $$\begin{pmatrix}
 - The order of a differential equation is the order of the highest derivative that appears in the equation. Thus, equation 1 and 3 are first order ODEs, equation 2 is a second order ODE, and equation 4 is a third order ODE.
 - A function $y=y(x)$ is a solution to an ODE if the equation is satisfied when $y(x)$ and it's derivatives are substituted. For example, $\frac{dy}{dx} -y = e^{2x}$ has the solution $y=e^{2x}$. 
  
-## Introduction
-
+## First Order Seperable ODEs:
+- A first order ODE is seperable if it can be written in the form $\frac{dy}{dx}=g(x)h(y)$ or $\frac{dy}{dx}=\frac{g(x)}{h(y)}$. These two types of equations are called the pre-differential form because the $x$ and $y$ variables are not seperate.
+- To solve these types of problems we...
+  - Step 1: write the equation in differential form by seperating the $x$ and $y$ variables.
+    - (a) $\frac{dy}{dx} = g(x)h(y) → \frac{1}{h(y)}dy = g(x)dx$
+    - (b) $\frac{dy}{dx}=\frac{g(x)}{h(y)} → h(y)dy = g(x)dx$
+  - Step 2: integrate both sides with respect to the variables ($x$ or $y$)...
+    - (a) $\int \frac{1}{h(y)}dy = int\ g(x)dx$
+    - (b) $\int h(y)dy = int\ g(x)dx$
+  - Step 3: solve for $y$ to get the explicit solution (if possible).
+  - Step 4 (only for initial value problems): plug in initial condition to solve for $c$, then write the equation with $c$ plugged in.
+- Example 1: solve $\frac{dy}{dx} = \frac{x}{y^2}$
