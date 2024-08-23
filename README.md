@@ -301,3 +301,6 @@ $$\begin{pmatrix}
   - Step 3: solve for $y$ to get the explicit solution (if possible).
   - Step 4 (only for initial value problems): plug in initial condition to solve for $c$, then write the equation with $c$ plugged in.
 - Example 1: solve $\frac{dy}{dx} = \frac{x}{y^2}$
+  - $\frac{dy}{dx} = \frac{x}{y^2} → y^2dy = xdx → \int y^2dy = \int xdx → \frac{y^3}{3} = \frac{x^2}{2}+c → y^3 = \frac{3x^2}{2}+3c → y = (\frac{3x^2}{2}+3c)^{1/3}$
+- Example 2: solve $x(y-1)\frac{dy}{dx} = y$
+  - $x(y-1_\frac{dy}{dx} = y → x(y-1)dy = ydx → (y-1)dy = \frac{ydx}{x} → \frac{(y-1)dy}{y} = \frac{dx}{x} → \frac{y-1}{y}dy = \frac{1}{x}dx → \int \frac{y-1}{y}dy = \int \frac{1}{x}dx → y-ln|y| = ln|x|+c$, which using the properties of logarithms simplifies to $y=ln|xy|+c$
