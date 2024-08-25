@@ -401,11 +401,11 @@ Example 2 (exponential): solve $y''-3y'+2y=e^x$
   - Example in notebook on pg.130
 - Step 2: find eigenvalues of $A$. Recall, eigenvalues of nxn matrix $A$ satisfy the equation $det(λI-A)=0$
 - Step 3: for each eigenvalue, $λ$, find the correspondng eigenvector by solving $(λI-A)x=0$
-- Step 4: form the general solution. If all eigenvalues are distinct, the general solution is $y(x)=c_{1}e^{λ_{1}x)+c_{2}e^{λ_{2}x)+...c_{n}e^{λ_{n}x)$
+- Step 4: form the general solution. If all eigenvalues are distinct, the general solution is $y(x)=c_{1}e^{λ_{1}x}+c_{2}e^{λ_{2}x}+...c_{n}e^{λ_{n}x}$
 - Example problem in notebook on pg. 131
 
 ### Solving Non-Homogenous Systems of first order ODES
 - Step 1: First, solve the corresponding homogenous system $\frac{d}{dx}y_g=Ay_h$
-- Step 2: find a particular solution to the non-homogenous system $\frac{d}{dx}=Ay_p+b(x)$. A common method is undetermined coefficients, where $y_p$ is assumed to be a constant vector $[y_1p, y_2p]# and $\frac{d}{dx}y_p=0$, so the equation becomes $0=Ay_p+b$, then solve for $y_p$ via back substitution.
-- Step 3: write the full solution, $y(x)=y_h(x)+y_p(x)$ → $y(x)=c_{1}e^{λ_{1}x)+c_{2}e^{λ_{2}x)+...c_{n}e^{λ_{n}x) + [y_1p, y_2p, ...y_np]$
+- Step 2: find a particular solution to the non-homogenous system $\frac{d}{dx}=Ay_p+b(x)$. A common method is undetermined coefficients, where $y_p$ is assumed to be a constant vector $[y_1p, y_2p]$ and $\frac{d}{dx}y_p=0$, so the equation becomes $0=Ay_p+b$, then solve for $y_p$ via back substitution.
+- Step 3: write the full solution, $y(x)=y_h(x)+y_p(x)$ → $y(x)=c_{1}e^{λ_{1}x}+c_{2}e^{λ_{2}x}+...c_{n}e^{λ_{n}x} + [y_1p, y_2p, ...y_np]$
 - Example problem in notebook on pg. 121
