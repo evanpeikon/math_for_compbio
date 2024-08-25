@@ -1,4 +1,4 @@
-This repository contains a series of math tutorials for computational biology and bioinformatics. 
+This repository contains math tutorials I created while preparing for my PhD in Bioinformatics and Computational Biology. After a long break from studying math, I developed these resources to refresh and deepen my understanding of key topics in differential and integral calculus, linear algebra, and solving ordinary differential equations. You’ll also find additional resources and book recommendations based on the materials I found most helpful in this process. 
 
 # 📚 Calculus 
 ## Techniques of Differentiation
@@ -227,6 +227,9 @@ This repository contains a series of math tutorials for computational biology an
 ### Double Integrals Over Non-Rectangular Regions
 - Double integrals over non-rectangular regions can fit into one of two categories, type I or type II, each with different rules: **see page 119 in notebook
 
+## Book Recomendation For Calculus
+- Howard Anton's "Calculus With Analytic Geometry". I personally used a 2nd edition copy from the 1980's, but there are newer additions available on Amazon. 
+
 # 📚 Linear Algebra
 ## Gauss-Jordian Eliminaation
 - To solve a linear system of equations we can perform algebraic operations on the system that do not alter the solution set and that produce successivley simpler systems until it can be ascertained whether the system is consistent (i.e, solveable) and if so what the solutions are.
@@ -277,6 +280,11 @@ $$\begin{pmatrix}
     - $x_4 = s$
     - $x_5 = t$
     - $x_6 = \frac{1}{3}$
+   
+  **Note - I skipped the remainder of this section since GitHub's Latex formatting within Markdown is a bit too clunky. However, important topics you should learn include matrix products as linear combinations, how to find the transpose, trace, and inverse of a matrix, solving linear systems via matrix inversion, how to solve linear systems with common coefficient matrix, rules associated with diagonal and triangular matrices, network analyses, determinants by co-factor expansion, vectors in coordinate space, linear combinations of vectors, vector norms, distance in $r^n$, inner products, dot products as matrix multiplication, orthogonal vectors, linear combinatons, linear independance and dependance, basis for vector space, coordiantes relative to basis, row, column, and null space, rank and nullity, matrix transformations from $R^n$ to $R^m$, dynamical systems and markov chains, eigenvalues and eigenvectors, finding eigenvalues and bases for eigenspaces, and diagnonalization of matrices. 
+
+## Book Recomendation For Linear Algebra 
+- Howard Anton's "Elimentary Linear Algebra". I found this book much more useful than Gilbert Strang's texts, which are more commonly recommended. 
 
 # 📚 Ordinary Differential Equations:
 ## Introduction
@@ -364,7 +372,8 @@ $$\begin{pmatrix}
   - Step 3: first differentiate $y_p$ into $y_{p}'$ and  $y_{p}''$, then sub these in for $y''$ and $y'$m and $y$ in the original equation $ay''+by'+cy=f(x)$
   - Step 4: collect like terms, then equate coefficients of like terms from both sides of the equation to solve for unknown coefficients in $y_p$
   - Step 5: Form solution by summing the general solution $y_h$ and particular solution $y_p$... $y(x)=y_{h}(x)+y_{p}(x)$
-- Example 1: solve y''-y'-6y=x^2$
+
+Example 1 (polynomial): solve $y''-y'-6y=x^2$ 
   - Step 1: First, we find $y_h$, which is $y_h = c_{1}e^{3x}+c_{2}e^{-2x}$
   - Step 2: Since $f(x)=x^2$ is polynomial of degree 2, we expect $y_p$ to have the form $y_{p}=Ax^2 +Bx+C$
   - Step 3: Now, we differentiate $y_{p}$ to get $y_{p}'=2Ax+B$ and $y_{p}''=2A$, then we sub these into the original equation to get $2A-(2Ax+b)-6(Ax^2+Bx+c)=x^2$, which simplifies to $2A-(2Ax+B)-(6Ax^2-6Bx-6C)=x^2$
@@ -378,6 +387,25 @@ $$\begin{pmatrix}
     - Thus, $y_p = -\frac{1}{6}x^2 + \frac{1}{18}x - \frac{7}{108}$
   - Step 5: $y(x) = c_{1}e^{3x}+c_{2}e^{-2x} -\frac{1}{6}x^2 + \frac{1}{18}x - \frac{7}{108}$
 
-## Systems Of First Order Ordinary Differential Equations
+Example 2 (exponential): solve $y''-3y'+2y=e^x$
+  - Step 1: $y_h = c_{1}e^{2x}+c_{2}e^{x}$
+  - Step 2: since $f(x)=e^x$, we guess that the particular solution has the form $y_p = Ae^x$. However, this solution produces incosistent results where where $0=e^x$ and $x=0$, which is impossible because it implies $0=1$. Thus, we guess again with $y_p = Axe^x$.
+  - Step 3-5: If $y_p = Axe^x$, then $y_{p}'=Ae^x + Axe^x$ and $y_{p}'' = 2Ae^x + Axe^x$. Thus, $(2Ae^x + Axe^x)-3(Ae^x+Axe^x)+2(Axe^x)=e^x$, which simplifies to $(-Ae^x)=e^x$, thus $A=-1$ and $y_p = -xe^x$. Finally, we get $y(x)=c_1e^{2x}+c_2e^x-xe^x$
 
-## Solving Non-Homogenous Systems Of Ordinary Differential Equations
+## Systems Of First Order Ordinary Differential Equations
+- A system of first order ODEs involves multiple equations, each describing the rate of change of one of the dependent variables with respect to a single independent variable. These systems generally have the form $\frac{dy}{dx}= Axy+b$ where $y$ is an $n$-dimensional vector of dependent variables,  $A$ is a nxn matrix, and $b$ is a $n$-dimensional vector of constants or functions of $x$.
+- Additionally, when $b=0$ the system is homogenous and takes the form $\frac{dy}{dx}=Ay$, whereas when $b≠0$, the system is non-homogenous and take the form above. 
+
+### Solving Homogenous Systems of first order ODES
+- Step 1: first, write the syste in matrix form $\frac{dy}{dx}=Ay$ where $A$ is an nxn matrix and $y$ is an $n$-dimensional vector of the form $y=[y_1, y_2,.. y_n]$
+  - Example in notebook on pg.130
+- Step 2: find eigenvalues of $A$. Recall, eigenvalues of nxn matrix $A$ satisfy the equation $det(λI-A)=0$
+- Step 3: for each eigenvalue, $λ$, find the correspondng eigenvector by solving $(λI-A)x=0$
+- Step 4: form the general solution. If all eigenvalues are distinct, the general solution is $y(x)=c_{1}e^{λ_{1}x)+c_{2}e^{λ_{2}x)+...c_{n}e^{λ_{n}x)$
+- Example problem in notebook on pg. 131
+
+### Solving Non-Homogenous Systems of first order ODES
+- Step 1: First, solve the corresponding homogenous system $\frac{d}{dx}y_g=Ay_h$
+- Step 2: find a particular solution to the non-homogenous system $\frac{d}{dx}=Ay_p+b(x)$. A common method is undetermined coefficients, where $y_p$ is assumed to be a constant vector $[y_1p, y_2p]# and $\frac{d}{dx}y_p=0$, so the equation becomes $0=Ay_p+b$, then solve for $y_p$ via back substitution.
+- Step 3: write the full solution, $y(x)=y_h(x)+y_p(x)$ → $y(x)=c_{1}e^{λ_{1}x)+c_{2}e^{λ_{2}x)+...c_{n}e^{λ_{n}x) + [y_1p, y_2p, ...y_np]$
+- Example problem in notebook on pg. 121
