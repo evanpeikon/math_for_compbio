@@ -334,9 +334,49 @@ $$\begin{pmatrix}
   - $T=\frac{1}{k}ln2$ is the doubling time and $T=-\frac{1}{k}ln2$ is the halving time (ex, radioactive decay).
  
 ## Second Order Ordinary Differential Equations
-### Homogenous Linear Equations
+### Seconding Order ODES: Homogenous Linear Equations
+- Second order homogenous linear equations have the form $a(x)y'' + b(x)y' +cy=0$. However, for constant coefficients this simplifies to the following: $ay''+by'+cy=0$ or $a\frac{d^2y}{dx^2}+b\frac{dy}{dx}+cy=0$, which are synonymous equations.
+- To solve these types of problems we...
+  - Step 1: start with the problem in $ay''+by'+cy=0$ form
+  - Step 2: substitute $y''=r^2e^{rx}$, $y'=re^{rx}$, and $y=e^{rx}$ into the equation, resulting in the following transformation: $ay''+by'+cy=0$ → $ar^2e^{rx}+bre^{rx}+ce^{rx}=0$
+  - Step 3: factor out $e^{rx}$, resulting in the following: $ar^2e^{rx}+bre^{rx}+ce^{rx}=0$ → $e^{rx}(ar^2+br+c)=0$
+  - Step 4: Since $e^{rx}≠0$, we can divide both sides by $e^{rx}$ to get the characteristic equation $ar^2+br+c=0$
+    - Note: You can jump straight to to the characteristic equation from step 1
+  - Step 5: Solve the characteristic equation by solving the quadratic equation $ar^2+br+c=0$ for $r$.
+    - $r= \frac{-b ± \sqrt{b^2-4ac}}{2a}$
+  - Step 6: determine the form of the general solution...
+    - Option 1: if there are two distinct real roots $r_1$ and $r_2$, the general solution is $y(x)=c_{1}e^{r_{1}x}+c_{2}e^{r_{2}x}$
+    - Option 2: if there is a repeated real root $r$, the general solution is $y(x)=(c_{1}+c_{2}x)e^{rx}$
+    - Option 3: if there are complex conjugate roots $r=α±βi$, the general solution is $y(x)=e^{αx}(c_{1}cos(βx)+c_{2}sin(βx))$
+  - Step 7: Obtain the specific solution if given an initial value to solve for.
+- Example 1: solve $1y''-3y'+2y=0$
+  - $1y''-3y'+2y=0$ → $1r^2-3r+2=0$ → $r= \frac{-(-3) ± \sqrt{-3^2-4(1)(2)}}{2(1)}$, which gives $r_1 = 2$ and $r_2=1$ → thus, $y=c_{1}e^{2x}+c_{2}e^{1x}$
+- Example 2: solve the following differential equation representing a dampened harmonic oscillator in circadian rhytmes: $\frac{d^2p}{dt^2}+\frac{4dp}{dt}+4p=0$
+  - $\frac{d^2p}{dt^2}+\frac{4dp}{dt}+4p=0$ → $r= \frac{-4 ± \sqrt{4^2-4(1)(4)}}{2(1)}$, which gives repeated real root $r=-2$ → thus, $(c_{1}+c_{2}x)e^{-2x}$
 
-### Non-Homogenous Linear Equations 
+### Seconding Order ODES: Non-Homogenous Linear Equations 
+- Seconod order non-homogenous linear equations have the form $ay''+by'+cy= f(x)$ and can be solved with the following steps:
+  - Step 1: first, solve the corresponding homogenous equation $ay''+by'+cy=0$ and determine the general solution, which we'll call $y_{h}$
+  - Step 2: next, we find the particular solution, $y_{p}$ using the method of undetermined coefficients. When $f(x)$ is a simple polynomial, exponential, sine, or cosine, this allows us to guess the form of $y_{p}$ based on $f(x)$, then determine the coefficients by substituting $y_{p}$ into the differential equaton...
+    - If $f(x)$ is polynomial of form $f(x)=ax^n+bx^{n-1}+...$ then $y_{p}$ is polynomial of degree $n$
+    - If $f(x)$ is exponential of form $f(x)=e^{kx}$, guess $y_{p}=Ae^{kx}$ or $Axe^{kx}$
+    - If $f(x)$ is sine or cosine, guess $y_p = Asin(kx)+Bcos(kx)$
+  - Step 3: first differentiate $y_p$ into $y_{p}'$ and  $y_{p}''$, then sub these in for $y''$ and $y'$m and $y$ in the original equation $ay''+by'+cy=f(x)$
+  - Step 4: collect like terms, then equate coefficients of like terms from both sides of the equation to solve for unknown coefficients in $y_p$
+  - Step 5: Form solution by summing the general solution $y_h$ and particular solution $y_p$... $y(x)=y_{h}(x)+y_{p}(x)$
+- Example 1: solve y''-y'-6y=x^2$
+  - Step 1: First, we find $y_h$, which is $y_h = c_{1}e^{3x}+c_{2}e^{-2x}$
+  - Step 2: Since $f(x)=x^2$ is polynomial of degree 2, we expect $y_p$ to have the form $y_{p}=Ax^2 +Bx+C$
+  - Step 3: Now, we differentiate $y_{p}$ to get $y_{p}'=2Ax+B$ and $y_{p}''=2A$, then we sub these into the original equation to get $2A-(2Ax+b)-6(Ax^2+Bx+c)=x^2$, which simplifies to $2A-(2Ax+B)-(6Ax^2-6Bx-6C)=x^2$
+  - Step 4: Now we collect like terms to get $-6Ax^2-2Ax-6Bx+2A-B-6C=x^2$, then equate coefficients of like terms from both sides...
+    - $x^2$ term: -6Ax^2 =x^2 → $-6A=1$
+    - $x$ term: $-2Ax-6Bx = 0$ → $-2A-6B=0$ 
+    - Constant term: $2A-B-6C=0$
+    - Now, from $-6A=1$ we get $A=-\frac{1}{6}$. Thus, we can solve for the remaining terms...
+      - $x$ term: $-2A-6B = 0$ → $-2(-\frac{1}{6})-6B=0$ means $B=\frac{1}{18}$
+      - constant: If we sub A and B into $2A-B-6C=0$ we get $C=-\frac{7}{108}$
+    - Thus, $y_p = -\frac{1}{6}x^2 + \frac{1}{18}x - \frac{7}{108}$
+  - Step 5: $y(x) = c_{1}e^{3x}+c_{2}e^{-2x} -\frac{1}{6}x^2 + \frac{1}{18}x - \frac{7}{108}$
 
 ## Systems Of First Order Ordinary Differential Equations
 
