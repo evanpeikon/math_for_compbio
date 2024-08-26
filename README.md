@@ -468,4 +468,21 @@ Example 2 (exponential): solve $y''-3y'+2y=e^x$
 - We can calculate the AUC using the CDF for a given probability distribution. For example, say the mean height is 167cm and the standard deviation is 8cm (and height is normally distributed). Now, if we want the probability that a random person is <158cm we can calcualte that using ```stats.norm.cdf(x, loc, scale)``` where $x$ is the value of interest (158), $loc$ is the mean of the probability distribution (167), and the $scale$ is the standard deviation (8). Thus, ```stats.norm.cdf(158, 167, 8)=0.11$
 
 ### Poisson Distribution
-- The Poisson distribution is used to describe the nunber of times a certain event occurs in a fixed time or space interval. For example, the PD can describe how many support emals you recieve between 10am-12pm on a given day, then represent it as a PMF or CDF. 
+- The Poisson distribution is used to describe the nunber of times a certain event occurs in a fixed time or space interval. For example, the PD can describe how many support emals you recieve between 10am-12pm on a given day, then represent it as a PMF or CDF.
+  - For example, say you expect 25 support emails in a 2 hour window. In that case, the number of emails is poisson distributed with $λ=25$. You can then calculate the probability of getting 11 emails with ```stats.poisson.pmf(11,25)```.
+  - Similarly, you can use ```stats.poisson.cdf()``` to evaluate the probability of observing a speciic number of emails or less. For example, if we want the probability of observing 7 emails or less in a 2 hour window when we expect 25 we can use ```stats.poisson.cdf(7,25)```.
+- The spread of the poisson distribution is expressed as variance and is equal to $λ$ (the epected value). Thus, the larger $λ$ is, the larger the number of potential values (ie the larger the spread). In other words, the larger the λ, the greater the range (max-min) of data.
+- Other probability distributions (like binomial) also have expected values. For example, if you flip a coin 10x ($n=10$) the probability of heads each time is 0.5 ($P=0.5$) and thus we expect 5 heads. As a result, the equation for the expected value of a binomial distribution is $Expected = E(x)=n*p$. Additionally, the variance (spread) of the binomial distribution is $variance = var(x) = n*p*(1-p)$
+
+### Properties of Expectation and Variance
+- The expected value of two independent random variables is the sum of each expected value $E(x&y)=E(x)+E(y)$.
+- Increasing the value on a distribution by a constant does not change variance $var(a&x)=var(x)$.
+
+### Central Limit Theorem
+- CLT states that the sampling distribution of a mean is normally distributed as long as the population is not skewed or the sample size is large enough.
+- Importantly, CLT only applies to sampling distributions of mean and not othr statistics like max/min and variance.
+- CLT not only establishes that a sampling distribution will be normally distributed, byt also allows us to describe the normal distribution quantitativley by their mean $µ$ and standard deviation $σ$.
+  - For example, take a sample size $n$ from a population with a true mean $µ$ and standard deviation $σ$. As long as $n$ is sufficiently large the sampling distribution of means will be normally distributed and the sample mean $x$ will be roughly equal to the population mean $µ$. Additionally, the sample standard deviation $σ$ will be equal to the population standard deviation divided by the square root of the sample size: $sample dist. std dev = \frac{σ}{\sqrt{n}}$
+- The standard deviation of the sampling distribution is also known as the standard error of the estimate of the mean. Often we cannot know the true populations standard deviation, so we can estimate the standard error as follows: $std error = \frac{sample standard dev}{\sqrt{n}}$.
+  - As $n$ increases, the standard error decreases and as sample standard deviation increases so does the standard error.
+- Because the mean of the sampling distribution of the mean is equal to the mean of the population its called an unbiased estimator. A statistic is an unbiased estimator of a population parameter if the mean of the sampling distribution of the statistic is equal to the value of the statistic of the population. Biased estimators on the other hand, is one where the mean of the sampling distribution is not equal to the mean of the statistic for the population. 
