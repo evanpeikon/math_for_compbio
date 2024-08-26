@@ -433,7 +433,7 @@ Example 2 (exponential): solve $y''-3y'+2y=e^x$
 ### Conditional Probability 
 - Whereas the addition rule determines the probability that one or both independent events occur, conditional probability determines the liklihod of two dependent events occuring. For example, say we have 5 marbles (3 red and 2 blue) in a bag. If we pick 2 marbles without replacement the chance of hte second marble being red depends on the color of the first marble. Thus, conditional probability is the chance of one event occuring given that another event already happened.
 - We denote the word given with the pipe symbol $|$. For example, the probability that we choose a red marble given the first is blue is $P(Red|Blue)$=\frac{3}{4}=75%$
-- However, if we replace the marble after selection the events are independent and therefore we use the addition rule... $P(Red|Blue)=P(Red)=\freac{3}{5}$.
+- However, if we replace the marble after selection the events are independent and therefore we use the addition rule... $P(Red|Blue)=P(Red)=\frac{3}{5}$.
 
 ### The Multiplication Rule
 - The multiplication rule determines the probability of two independent or dependent events occuring simultaneously,denoted as $P(A and B)$. 
@@ -475,8 +475,8 @@ Example 2 (exponential): solve $y''-3y'+2y=e^x$
 - Other probability distributions (like binomial) also have expected values. For example, if you flip a coin 10x ($n=10$) the probability of heads each time is 0.5 ($P=0.5$) and thus we expect 5 heads. As a result, the equation for the expected value of a binomial distribution is $Expected = E(x)=n*p$. Additionally, the variance (spread) of the binomial distribution is $variance = var(x) = n*p*(1-p)$
 
 ### Properties of Expectation and Variance
-- The expected value of two independent random variables is the sum of each expected value $E(x&y)=E(x)+E(y)$.
-- Increasing the value on a distribution by a constant does not change variance $var(a&x)=var(x)$.
+- The expected value of two independent random variables is the sum of each expected value $E(x and y)=E(x)+E(y)$.
+- Increasing the value on a distribution by a constant does not change variance $var(a and x)=var(x)$.
 
 ### Central Limit Theorem
 - CLT states that the sampling distribution of a mean is normally distributed as long as the population is not skewed or the sample size is large enough.
